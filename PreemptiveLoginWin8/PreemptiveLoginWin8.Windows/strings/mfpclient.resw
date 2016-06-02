@@ -130,7 +130,7 @@
     <value>/mfp/</value>
   </data>
   <data name="wlServerHost" xml:space="preserve">
-    <value>192.168.2.1</value>
+    <value>10.0.0.3</value>
   </data>
   <data name="wlServerPort" xml:space="preserve">
     <value>9080</value>

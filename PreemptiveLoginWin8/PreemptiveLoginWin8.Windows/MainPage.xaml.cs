@@ -1,4 +1,4 @@
-﻿/**
+/**
 * Copyright 2016 IBM Corp.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +13,6 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -128,7 +127,7 @@ namespace PreemptiveLoginWin8
             MainPage._this.ConsolePanel.Visibility = Visibility.Visible;
             MainPage._this.ConsoleTab.Foreground = new SolidColorBrush(Colors.DodgerBlue);
         }
-        
+
         private void OKButton_Click(object sender, RoutedEventArgs e)
         {
             if (username.Text != "" && password.Text != "")
@@ -150,7 +149,7 @@ namespace PreemptiveLoginWin8
 
                  });
             }
-            
+
         }
 
         public async void showChallenge(Object challenge)
@@ -196,7 +195,7 @@ namespace PreemptiveLoginWin8
 
         public void hideChallenge()
         {
-            
+
             CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
                 async () =>
                 {
@@ -218,11 +217,6 @@ namespace PreemptiveLoginWin8
             preemptChallengeHandler.SetShouldSubmitChallenge(false);
             PreemptiveLoginChallengeHandler.waitForPincode.Set();
 
-        }
-
-        public WorklightChallengeHandler getChallengeHandler()
-        {
-            return preemptChallengeHandler;
         }
 
         private void Logout_Click(object sender, RoutedEventArgs e)
