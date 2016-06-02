@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 	Copyright 2016 IBM Corp.
 
 	Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +13,7 @@
 	See the License for the specific language governing permissions and
 	limitations under the License.
 -->
-    <Page
+<Page
     x:Class="PreemptiveLoginWin8.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -28,7 +28,7 @@
         <TextBlock HorizontalAlignment="Center" Margin="106,5,106,0" TextWrapping="Wrap" Text="PreemptiveLogin" VerticalAlignment="Top" Height="51" Width="auto" Foreground="White" TextAlignment="Center" FontSize="26" FontFamily="Segoe WP SemiLight"/>
         <Button Content="Get Balance" x:Name="GetBalance" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="42,168,0,0" FontSize="22" Background="#FF3880C2" Foreground="#FFF9FBFF" Height="70" Width="310" FontWeight="Normal" FontFamily="Segoe UI Semilight" Click="GetBalance_Click"/>
         <Button x:Name="Logout" Content="Logout" HorizontalAlignment="Left" Margin="42,225,0,0" VerticalAlignment="Top" FontSize="22" Background="#FF3880C2" Foreground="#FFF9FBFF" Height="70" Width="310" FontWeight="Normal" FontFamily="Segoe UI Semilight" Click="Logout_Click"/>
-        
+
         <TextBlock x:Name="UserName" FontSize="20" HorizontalAlignment="Left" Height="44" Margin="42,69,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="310"/>
         <TextBlock x:Name="Console" HorizontalAlignment="Center" TextAlignment="Justify" Margin="42,114,48,0" TextWrapping="Wrap" Foreground="White" VerticalAlignment="Top" Height="45" Width="310" FontSize="20" FontFamily="Segoe WP" DoubleTapped="ClearConsole" />
 
@@ -48,6 +48,6 @@
             <TextBlock Name="HintText" HorizontalAlignment="Left" Margin="2,262,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="73" Width="390" FontSize="20" TextAlignment="Center" FontFamily="Segoe UI Semilight" Grid.ColumnSpan="2"/>
 
         </Grid>
-        
+
     </Grid>
 </Page>

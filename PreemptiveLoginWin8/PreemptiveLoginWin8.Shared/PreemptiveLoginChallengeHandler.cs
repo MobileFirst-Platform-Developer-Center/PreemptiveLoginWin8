@@ -1,4 +1,4 @@
-﻿/**
+/**
 * Copyright 2016 IBM Corp.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +13,6 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -27,7 +26,7 @@ using Worklight;
 
 namespace PreemptiveLoginWin8
 {
-    class PreemptiveLoginChallengeHandler : Worklight.WorklightChallengeHandler
+    class PreemptiveLoginChallengeHandler : Worklight.SecurityCheckChallengeHandler
     {
         public JObject challengeAnswer { get; set; }
 
@@ -67,18 +66,9 @@ namespace PreemptiveLoginWin8
             waitForPincode.WaitOne();
         }
 
-        public override bool ShouldSubmitFailure()
+        public override bool ShouldCancel()
         {
             return shouldsubmitfailure;
-        }
-
-        public override WorklightResponse GetSubmitFailureResponse()
-        {
-            JObject respJSON = new JObject();
-            respJSON.Add("Respose", "Cancelled Request");
-
-            WorklightResponse response = new WorklightResponse(false, "User cancelled the request", respJSON, "User cancelled the request", (int)HttpStatusCode.InternalServerError);
-            return response;
         }
 
         public async void login(JObject credentials)
@@ -94,7 +84,7 @@ namespace PreemptiveLoginWin8
             {
                 response = await WorklightClient.CreateInstance().AuthorizationManager.Login(this.SecurityCheck, this.challengeAnswer);
             }
-            
+
 
             if (response.Success)
             {
@@ -106,7 +96,7 @@ namespace PreemptiveLoginWin8
                 localSettings.Values["useridentity"] = userName;
 
                 MainPage._this.AddUserName(userName);
-                
+
             }
 
         }
@@ -145,7 +135,7 @@ namespace PreemptiveLoginWin8
             Debug.WriteLine("Error");
         }
 
-        public override void HandleSuccess(JObject identity) 
+        public override void HandleSuccess(JObject identity)
         {
             Debug.WriteLine("Success");
             Debug.WriteLine(identity.GetValue("user"));
